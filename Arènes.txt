@@ -1,0 +1,14 @@
+Combat#Vault
+Vol#Ponyville
+Feu#San Helios
+Acier#Metropolis
+Normal#HillValley
+Electrik#Noxus
+Eau#Delphino
+Insecte/Plante#Rivendell
+
+C4:
+Dragon
+Roche/Sol
+Glace/(eau)
+Spectre/(Psy)/Poison

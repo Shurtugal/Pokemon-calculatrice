@@ -1,0 +1,38 @@
+barre d'xp : (xp-lvl**3)/(3*lvl*(lvl+1)+1)
+
+save : [lvl, xp, pv, id, [poison, paralysie, brulure, gel, someil, confusion, attaque mod, defense mod, vitesse mod, précision mod], attaques, pps]
+wild : [lvl, xp, [poison, paralysie, brulure, gel, someil, confusion, attaque mod, defense mod, vitesse mod, précision mod], attaques, pps]
+
+id de l'effet :
+
+1.Poison
+2.Paralisie
+3.Brulure
+4.Gel
+5.Someil
+6.Confusion
+7.Attaque en premier
+8.Augmente l'attaque du lanceur"
+9.Diminue l'attaque de la victime
+10.Augmente la défense du lanceur"
+11.Diminue la défense de la victime
+12.Augmente la vitesse du lanceur"
+13.Diminue la vitesse de la victime
+14.Diminue la précision de la victime
+15.Blesse le lanceur (genre pour bélier)"
+16.Attaque de 2 à 5 fois la cible"
+17.Apeure la cible
+18.Met K.O. le lanceur (Explosion)"
+19.Inflige des dégâts pendant 3 tours"
+20.Le lanceur recharge"
+21.Augmente attaque et vitesse du lanceur"
+22.Taux de critiques élevé
+23.Attaque 2 fois"
+24.Le lanceur récupère la moitié des dégâts infligés à l'ennemi en PV"
+25.Repos"
+26.Augmente beaucoup l'attaque du lanceur"
+27.Augmente beaucoup la défense du lanceur"
+28.Augmente beaucoup la vitesse du lanceur"
+29.Diminue beaucoup la défense de la victime
+30.Le lanceur récupère 50% de ses PV"
+31.Annule tous les changements de stats des Pokémons sur le terrain"

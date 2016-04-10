@@ -2,7 +2,7 @@ Welcome to this project. As you might have understood by its name, this project 
 Now, it's just a project, so even if we have the whole 120-pokemon Pokedex, their sprites, the map, and other stuffs, the actual python program is nearly empty.
 But if motivation is with us, it will progress !
 We've now turned on to pygame (from pyglet), and it's so much better ! More updates soon !
-Pygame is great, we've got first mechanichs of battle already done !
+Battle coding is nearly finnished ! 
 
 Install : download python2 [https://www.python.org/downloads/] and pygame [http://www.pygame.org/download.shtml] in this order, then just launch the Pokemon-Frozen 2.py file with python2, and enjoy.
 

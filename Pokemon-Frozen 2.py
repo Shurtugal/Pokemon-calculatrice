@@ -25,6 +25,8 @@ pygame.display.set_caption("Pokemon Frozen")
 
 wild=[5.0, 109, [0,0,0,0,0,0,1.0,1.0,1.0,1.0], 3, 110, 64, 0, 30, 30, 20, 0]
 
+escapeattemps=0
+
 sid=wild[1]
 mid=save[3]
 Wmaxpv=pokemon(sid)[3][3]*wild[0]/50+wild[0]+10.0
@@ -68,7 +70,7 @@ while not end:
 			text3=pygame.font.SysFont('Arial', 35, False, False).render(fighttext[2][1], True, black)
 			text4=pygame.font.SysFont('Arial', 35, False, False).render(fighttext[2][2], True, black)
 			text5=pygame.font.SysFont('Arial', 35, False, False).render(fighttext[2][3], True, black)
-			if framecount>20 and pygame.key.get_pressed()[111]==1:
+			if framecount>5 and pygame.key.get_pressed()[111]==1:
 				submenu=J[0]+J[1]*2+1
 				framecount=0
 				J=0,0
@@ -89,8 +91,9 @@ while not end:
 			text5=pygame.font.SysFont('Arial', 35, False, False).render(attaque(save[8])[4], True, black)
 			text6=pygame.font.SysFont('Arial', 35, False, False).render('PP '+str(save[J[0]+2*J[1]+9])+'/'+str(attaque(save[J[0]+2*J[1]+5])[5]), True, black)
 			text7=pygame.font.SysFont('Arial', 35, False, False).render(types[attaque(save[J[0]+2*J[1]+5])[0]], True, black)
-			if framecount>20 and pygame.key.get_pressed()[111]==1:
+			if framecount>5 and pygame.key.get_pressed()[111]==1:
 				if save[J[0]+2*J[1]+9]>0:
+					escapeattemps=0
 					paralised=(random.randint(1,4)==1 and save[4][1]==1)
 					if paralised or save[4][3]>0 or save[4][4]>0:
 						fighttextcount=3.4
@@ -136,10 +139,22 @@ while not end:
 			text1=pygame.font.SysFont('Arial', 35, False, False).render('Cette attaque n\'a plus de PP !', True, black)
 			if framecount>60:
 				submenu=1
-		if submenu>=2:
+		if submenu in [2,3]:
 			text1=pygame.font.SysFont('Arial', 35, False, False).render('Fonctionalite non disponible.', True, black)
 			if framecount>60:
 				submenu=0
+		if submenu==4:
+			escapeattemps+=1
+			if random.randint(0,255)<=128.0*(pokemon(mid)[3][2]*save[0]/50+5)*save[4][8]/(pokemon(sid)[3][2]*wild[0]/50+5)/wild[2][8]+30.0*escapeattemps:
+				text1=pygame.font.SysFont('Arial', 35, False, False).render('Vous prenez la fuite.', True, black)
+				if framecount>20 and pygame.key.get_pressed()[111]==1:
+					end=1
+			else:
+				text1=pygame.font.SysFont('Arial', 35, False, False).render('Vous ne pouvez pas fuir.', True, black)
+				if framecount>20 and pygame.key.get_pressed()[111]==1:
+					attacked=[1,0]
+					framecount=0
+					fighttextcount=7
 	if fighttextcount==3:
 		text1=pygame.font.SysFont('Arial', 35, False, False).render(pokemon(mid)[0]+' utilise '+attaque(save[J[0]+J[1]*2+5])[4]+' !', True, black)
 		if framecount in range(60,111) and attaque(save[J[0]+J[1]*2+5])[1]>0:

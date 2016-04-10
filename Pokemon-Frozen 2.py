@@ -15,6 +15,8 @@ typemodtext=['in','tres peu ','pas tres ','super ','extremement ']
 framecount=0
 fighttextcount=-1
 
+pygame.display.set_icon(pygame.image.load("Donées/icon.png"))
+
 screen=pygame.display.set_mode(size)
 pygame.display.set_caption("Pokemon Frozen")
 
